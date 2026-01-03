@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MUCILAGE - Tabletop RPG Modules</title>
+  <meta name="description" content="A collection of tabletop RPG modules and adventures. Each journey awaits your party.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <h1 class="site-title">MUCILAGE</h1>
+
+      <!-- Desktop Navigation -->
+      <nav>
+        <ul>
+          <li><a href="index.html">Modules</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="mailto:contact@mucilage.net">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Mobile Menu Toggle -->
+      <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+        ☰
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+      <ul>
+        <li><a href="index.html">Modules</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="mailto:contact@mucilage.net">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- Intro Section -->
+    <div class="intro">
+      <p>A collection of tabletop RPG modules and adventures. Each journey awaits your party.</p>
+    </div>
+
+    <!-- Module Grid -->
+    <div class="module-grid">
+      <!-- Module 1: The Veiled City -->
+      <a href="modules/veiled-city.html" class="module-card">
+        <div class="module-cover">
+          <div class="module-cover-placeholder">
+            [veiled-city.jpg]<br>
+            <small>Module Cover Art</small>
+          </div>
+        </div>
+        <h3 class="module-title">The Veiled City</h3>
+        <p class="module-description">Explore a forgotten vampire metropolis shrouded in an age of shadows.</p>
+      </a>
+
+      <!-- Module 2: Dungeon Delvers -->
+      <a href="modules/dungeon-delvers.html" class="module-card">
+        <div class="module-cover">
+          <div class="module-cover-placeholder">
+            [dungeon-delvers.jpg]<br>
+            <small>Module Cover Art</small>
+          </div>
+        </div>
+        <h3 class="module-title">Dungeon Delvers</h3>
+        <p class="module-description">A rules-light system for classic fantasy adventures.</p>
+      </a>
+
+      <!-- Module 3: Starlight Odyssey -->
+      <a href="modules/starlight-odyssey.html" class="module-card">
+        <div class="module-cover">
+          <div class="module-cover-placeholder">
+            [starlight-odyssey.jpg]<br>
+            <small>Module Cover Art</small>
+          </div>
+        </div>
+        <h3 class="module-title">Starlight Odyssey</h3>
+        <p class="module-description">Forge tight bonds for Troika in a sci-fi saga.</p>
+      </a>
+
+      <!-- Module 4: Curse of the Oracle -->
+      <a href="modules/curse-of-the-oracle.html" class="module-card">
+        <div class="module-cover">
+          <div class="module-cover-placeholder">
+            [curse-oracle.jpg]<br>
+            <small>Module Cover Art</small>
+          </div>
+        </div>
+        <h3 class="module-title">Curse of the Oracle</h3>
+        <p class="module-description">Unravel ancient mysteries in a desert wasteland.</p>
+      </a>
+
+      <!-- Module 5: Eldritch Echoes -->
+      <a href="modules/eldritch-echoes.html" class="module-card">
+        <div class="module-cover">
+          <div class="module-cover-placeholder">
+            [eldritch-echoes.jpg]<br>
+            <small>Module Cover Art</small>
+          </div>
+        </div>
+        <h3 class="module-title">Eldritch Echoes</h3>
+        <p class="module-description">Cosmic horror meets urban exploration.</p>
+      </a>
+
+      <!-- Module 6: Rogue's Road -->
+      <a href="modules/rogues-road.html" class="module-card">
+        <div class="module-cover">
+          <div class="module-cover-placeholder">
+            [rogues-road.jpg]<br>
+            <small>Module Cover Art</small>
+          </div>
+        </div>
+        <h3 class="module-title">Rogue's Road</h3>
+        <p class="module-description">A thieves' guild adventure through shadowed streets.</p>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-links">
+        <a href="https://itch.io" class="footer-link" target="_blank" rel="noopener noreferrer">
+          <div class="footer-icon">i</div>
+          Itch.io
+        </a>
+        <a href="https://patreon.com" class="footer-link" target="_blank" rel="noopener noreferrer">
+          <div class="footer-icon">P</div>
+          Patreon
+        </a>
+        <a href="https://discord.com" class="footer-link" target="_blank" rel="noopener noreferrer">
+          <div class="footer-icon">D</div>
+          Discord
+        </a>
+      </div>
+      <div class="footer-copyright">
+        © 2025 Mucilage
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMobileMenu() {
+      const mobileNav = document.getElementById('mobileNav');
+      mobileNav.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

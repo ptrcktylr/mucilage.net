@@ -1,74 +1,141 @@
-# Astro Supabase Starter
+# MUCILAGE - Tabletop RPG Module Portfolio
 
-![Astro Supabase Starter Preview](astro-supabase-starter-preview.png)
+A clean, static HTML site showcasing your tabletop RPG modules with a dark, vintage D&D aesthetic.
 
-**View demo:** [https://astro-supabase-starter.netlify.app/](https://astro-supabase-starter.netlify.app/)
+## 🎲 Quick Start
 
-The Astro Supabase starter demonstrates how to integrate **Supabase** into an Astro project deployed on Netlify.
+1. **View the site locally:**
+   - Simply open `public/index.html` in your browser
+   - No build step required!
 
-## Deploying to Netlify
+2. **Add your module cover images:**
+   - Place images in `public/images/modules/`
+   - Recommended size: 600x900px (2:3 aspect ratio)
+   - Format: JPG or PNG
+   - Example filenames: `veiled-city.jpg`, `dungeon-delvers.jpg`, etc.
 
-If you click "Deploy to Netlify" button, it will create a new repo for you that looks exactly like this one, and sets that repo up immediately for deployment on Netlify.
+3. **Update the HTML to use your images:**
+   - Edit `public/index.html` and replace the placeholder divs with:
+     ```html
+     <img src="images/modules/veiled-city.jpg" alt="The Veiled City">
+     ```
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/astro-supabase-starter&fullConfiguration=true)
-
-## Astro Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## Developing Locally
-
-| Prerequisites                                                                |
-| :--------------------------------------------------------------------------- |
-| [Node.js](https://nodejs.org/) v18.14+                                       |
-| (optional) [nvm](https://github.com/nvm-sh/nvm) for Node version management  |
-| [Netlify account](https://netlify.com/)                                      |
-| [Netlify CLI](https://docs.netlify.com/cli/get-started/).                    |
-| [Supabase account](https://supabase.com/)                                    |
-
-### Set up the database
-
-To use this template, you’ll need to set up and seed a new Supabase database.
-
-1. Create a new Supabase project.
-2. Run the SQL commands found in the `supabase/migrations` directory in the Supabase UI.
-3. To seed the database with data, you can import the contents of the `supabase/seed.csv` file in the Supabase UI.
-
-ℹ️ _Note: This template was created to be used with the Supabase extension for Netlify. If you don’t wish to use the Netlify Supabase extension, you will need to set the `SUPABASE_DATABASE_URL` and `SUPABASE_ANON_KEY` environment variables in the `.env` file._
-
-### Install and run locally
-
-1. Clone this repository, then run `npm install` in its root directory.
-
-2. For the starter to have full functionality locally, please ensure you have an up-to-date version of Netlify CLI. Run:
+## 📁 File Structure
 
 ```
-npm install netlify-cli@latest -g
+public/
+├── index.html              # Homepage with module grid
+├── about.html              # About page
+├── modules/
+│   └── veiled-city.html   # Individual module page (template)
+├── css/
+│   └── styles.css         # All styling
+└── images/
+    └── modules/           # Your module cover images go here
 ```
 
-3. Link your local repository to the deployed Netlify site. This will ensure you're using the same runtime version for both local development and your deployed site.
+## ✏️ How to Edit
 
+### Adding a New Module
+
+1. **Create a new module page:**
+   - Copy `public/modules/veiled-city.html`
+   - Rename it (e.g., `my-new-module.html`)
+   - Update the content inside
+
+2. **Add it to the homepage:**
+   - Edit `public/index.html`
+   - Add a new module card in the grid:
+     ```html
+     <a href="modules/my-new-module.html" class="module-card">
+       <div class="module-cover">
+         <img src="images/modules/my-new-module.jpg" alt="My New Module">
+       </div>
+       <h3 class="module-title">My New Module</h3>
+       <p class="module-description">A brief one-sentence description.</p>
+     </a>
+     ```
+
+### Updating Content
+
+- **Homepage intro text:** Edit the `<div class="intro">` section in `index.html`
+- **About page:** Edit `about.html`
+- **Module details:** Edit individual files in `modules/`
+- **Footer links:** Update URLs in the footer section of any HTML file
+- **Social links:** Replace placeholder URLs with your actual Itch.io, Patreon, Discord links
+
+### Styling Customization
+
+All styles are in `public/css/styles.css`. Key color variables at the top:
+
+```css
+:root {
+  --bg-primary: #2a2520;      /* Main background */
+  --bg-secondary: #252018;    /* Header/footer background */
+  --text-primary: #c9b896;    /* Main text color */
+  --text-secondary: #8b7355;  /* Secondary text */
+  /* ... more colors */
+}
 ```
-netlify link
-```
 
-4. Then, run the Astro.js development server via Netlify CLI:
+## 🚀 Deployment to Cloudflare Pages
 
-```
-netlify dev --target-port 4321
-```
+1. **Connect your domain on Porkbun:**
+   - Log in to Porkbun
+   - Go to your domain's DNS settings
+   - Change nameservers to Cloudflare's (you'll get these in step 2)
 
-If your browser doesn't navigate to the site automatically, visit [localhost:8888](http://localhost:8888).
+2. **Set up Cloudflare:**
+   - Create free account at [cloudflare.com](https://cloudflare.com)
+   - Add your domain
+   - Cloudflare will scan your DNS records
+   - Copy the nameservers Cloudflare provides
+   - Go back to Porkbun and update your domain's nameservers
 
-## Support
+3. **Deploy to Cloudflare Pages:**
+   - Push this repo to GitHub (or GitLab/Bitbucket)
+   - Go to Cloudflare Dashboard → Pages
+   - Click "Create a project" → "Connect to Git"
+   - Select your repository
+   - **Build settings:**
+     - Build command: (leave empty)
+     - Build output directory: `public`
+   - Click "Save and Deploy"
 
-If you get stuck along the way, get help in our [support forums](https://answers.netlify.com/).
+4. **Set up custom domain:**
+   - In Cloudflare Pages, go to your project
+   - Click "Custom domains"
+   - Add your domain: `mucilage.net`
+   - Cloudflare will automatically configure DNS
+
+That's it! Your site will be live at `mucilage.net` and will auto-deploy whenever you push to GitHub.
+
+## 🎨 Design Notes
+
+- **Dark vintage aesthetic** inspired by old D&D modules
+- **Parchment color palette** with warm browns and creams
+- **Serif fonts:** Cinzel for headings, Lora for body text
+- **Fully responsive** - works on mobile, tablet, and desktop
+- **Zero JavaScript dependencies** - just vanilla JS for mobile menu toggle
+
+## 📝 To-Do for Joe
+
+- [ ] Add your actual module cover images to `public/images/modules/`
+- [ ] Update the image placeholders in HTML files to use real images
+- [ ] Fill in your about section in `about.html`
+- [ ] Add real content to `veiled-city.html` (or delete if not needed)
+- [ ] Create pages for your other modules (copy the template)
+- [ ] Update social media links with your actual URLs
+- [ ] Update contact email in navigation
+- [ ] Push to GitHub and deploy to Cloudflare Pages
+
+## 🆘 Need Help?
+
+- **Local testing:** Just open `public/index.html` in any browser
+- **Image not showing?** Check the file path matches exactly
+- **Styling broken?** Make sure `styles.css` is in `public/css/`
+- **Deployment issues?** Check that Cloudflare Pages build output is set to `public`
+
+---
+
+Built with plain HTML, CSS, and a sprinkle of vanilla JavaScript. No frameworks, no build tools, just clean code.
