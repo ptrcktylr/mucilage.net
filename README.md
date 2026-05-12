@@ -58,11 +58,10 @@ public/
 
 ### Updating Content
 
-- **Homepage intro text:** Edit the `<div class="intro">` section in `index.html`
 - **About page:** Edit `about.html`
 - **Module details:** Edit individual files in `modules/`
 - **Footer links:** Update URLs in the footer section of any HTML file
-- **Social links:** Replace placeholder URLs with your actual Itch.io, Patreon, Discord links
+- **Social links:** Replace placeholder URLs with your actual Itch.io link
 
 ### Styling Customization
 
@@ -122,10 +121,9 @@ That's it! Your site will be live at `mucilage.net` and will auto-deploy wheneve
 
 - [ ] Add your actual module cover images to `public/images/modules/`
 - [ ] Update the image placeholders in HTML files to use real images
-- [ ] Fill in your about section in `about.html`
 - [ ] Add real content to `veiled-city.html` (or delete if not needed)
 - [ ] Create pages for your other modules (copy the template)
-- [ ] Update social media links with your actual URLs
+- [ ] Update the Itch.io link with your actual URL
 - [ ] Update contact email in navigation
 - [ ] Push to GitHub and deploy to Cloudflare Pages
 
